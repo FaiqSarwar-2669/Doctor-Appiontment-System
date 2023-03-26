@@ -1,7 +1,7 @@
-<?php
+<!-- <?php
 
 
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,131 +11,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Registeration</title>
-    <style>
-      <?php
-        if (isset($_GET["form1"]))
-          echo "#form1 { display: block !important; }";
-        elseif (isset($_GET["form2"]))
-          echo "#form2 { display: block !important; }";
-        elseif (isset($_GET["form3"]))
-          echo "#form3{ display: block !important; }";
-      ?>
-    </style>
 </head>
 <body>
-
-
     <div class="forms_area">
-        <form id="form1" onsubmit=" return validate_fields_form_1() " method="post" action="/Doctor-Appointment-system/form1.php">
-            <h1>Login as an Admin</h1>
-
+        <form id="form1" onsubmit=" return validate_fields_form() " method="post" action="/Doctor-Appointment-system/form1.php">
+            <h1>Sign Up Form</h1>
             <p class="error">
               <?php
-                if (isset($_GET["form1"])) {
-                  if (isset($_GET["msg"]))
-                    echo $_GET["msg"];
+                if(isset($_GET['error']))
+                {
+                  echo "<style>#form1{display: block;}</style>";
+                  echo $_GET['error'];
                 }
               ?>
             </p>
-
             <label for="Admin_name">Name</label><span>*</span><br>
-            <input type="text" id="Admin_name" placeholder="Enter your name" name="name" required><br><br>
+            <input type="text" id="Admin_name" placeholder="Enter your name" name="name" required value="f"><br><br>
             <label for="Admin_adress">Address</label><span>*</span><br>
-            <input type="text" id="Admin_adress" placeholder="Enter your address" name="address" required><br><br>
+            <input type="text" id="Admin_adress" placeholder="Enter your address" name="address" required value="f"><br><br>
             <label for="Admin_Gender">Gender</label><span>*</span><br>
             <select name="gender" id="Admin_Gender">
-              <option value=""></option>
+              <option value="f"></option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select><br><br>
             <label for="Admin_contact">Contact Number</label><span>*</span><br>
-            <input type="tel" id="Admin_contact" placeholder="03XX-XXXXXXX" name="contact_number" required><br><br>
-            <label for="Admin_email">Email</label><span>*</span><br>
-            <input type="email" id="Admin_email" placeholder="Enter your email" name="email" required><br><br>
-            <label for="Admin_password">Password</label><span>*</span><br>
-            <input type="password" id="Admin_password" placeholder="Create pin or password" name="password" required><br><br>
-            <label for="Admin_description">Description</label><br>
-            <textarea id="Admin_description" placeholder="Enter about Here...." name="description"></textarea><br><br>
-            <input type="submit" >
-        </form>
-        
-        <form id="form2" action="/Doctor-Appointment-system/form2.php" onsubmit=" return validate_fields_form_2() " method="post">
-            <h1>Login as a Doctor</h1>
-
-            <p class="error">
-              <?php
-                if (isset($_GET["form2"])) {
-                  if (isset($_GET["msg"]))
-                    echo $_GET["msg"];
-                }
-              ?>
-            </p>
-            
-            <label for="Doctor_name">Name</label><span>*</span><br>
-            <input type="text" id="Doctor_name" value="Faiq" placeholder="Enter your name" name="name" required><br><br>
-            <label for="Doctor_Specilization">Specilization</label><span>*</span><br>
-            <select name="specilization" id="Doctor_Specilization">
-                <option value=""></option>
-                <option value="Dentist">Dentist</option>
-                <option value="Neurologist">Neurologist</option>
-                <option value="Dermatologist">Dermatologist</option>
-                <option value="Cardiologist">Cardiologist</option>
-                <option value="Orthopedic surgeons">Orthopedic surgeons</option>
-                <option value="Urologist">Urologist</option>
-                <option value="Psychiatrist">Psychiatrist</option>
-              </select><br><br>
-            <label for="doctor_adress">Address</label><span>*</span><br>
-            <input type="text" value="add" id="doctor_adress" placeholder="Enter your address" required name="address"><br><br>
-            <label for="Doctor_gender">Gender</label><span>*</span><br>
-            <select name="gender" id="Doctor_gender">
+            <input type="tel" id="Admin_contact" placeholder="03XX-XXXXXXX" name="contact_number" required value="0347-2669712"><br><br>
+            <label for="Admin_contact">Select Category</label><span>*</span><br>
+            <select name="selection" id="Admin_selection" onchange="Show_Selected_Inputs()">
               <option value=""></option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
+              <option value="User">User</option>
+              <option value="Doctor">Doctor</option>
             </select><br><br>
-            <label for="Doctor_contact">Contact Number</label><span>*</span><br>
-            <input type="tel" value="0434-5484883" id="Doctor_contact" placeholder="03XX-XXXXXXX" name="contact_number"  required><br><br>
-            <label for="Doctor_email">Email</label><span>*</span><br>
-            <input type="email" value="Faiq@fff.vvv" id="Doctor_email" placeholder="Enter your email" name="email" required><br><br>
-            <label for="Doctor_password">Password</label><span>*</span><br>
-            <input type="password" value="12345678" id="Doctor_password" placeholder="Create pin or password" name="password" required><br><br>
-            <label for="Doctor_description">Description</label><br>
-            <textarea id="Doctor_description" value="Faiq" placeholder="Enter about Here...." name="description"></textarea><br><br>
+            <div class="doctor_fields" id="doctor_fields">
+              <label for="select_specialization">Specialization </label><span>*</span>
+              <select id="select_specialization" name="specialization">
+                <option value="painkiller"></option>
+                <option value="Cardiologist">Cardiologist</option>
+                <option value="Dermatologist">Dermatologist</option>
+                <option value="Endocrinologist">Endocrinologist</option>
+                <option value="Gastroenterologist">Gastroenterologist</option>
+                <option value="Neurologist">Neurologist</option>
+                <option value="Ophthalmologist">Ophthalmologist</option>
+                <option value="Orthopedic Surgeon">Orthopedic Surgeon</option>
+                <option value="Pediatrician">Pediatrician</option>
+                <option value="Psychiatrist">Psychiatrist</option>
+                <option value="Radiologist">Radiologist</option>
+                <option value="Urologist">Urologist</option>
+              </select>
+              <br><br>
+              <label for="Admin_email">Email</label><span>*</span><br>
+              <input type="email" id="Admin_email" placeholder="Enter your email" name="email" required value="john.doe@example.com"><br><br>
+            </div>
+              <label for="Admin_password">Password</label><span>*</span><br>
+              <input type="password" id="Admin_password" placeholder="Create pin or password" name="password" required value="7861234"><br><br>
+              <label for="Admin_password_conform">Conform Password</label><span>*</span><br>
+              <input type="password" id="Admin_password_conform" placeholder="Re-type pin or password" name="conform_password" required value="7861234"><br><br>
+            <div class="user_fields" id="user_fields">
+            </div>
             <input type="submit">
         </form>
-        
-        <form id="form3"  action="/Doctor-Appointment-system/form3.php" onsubmit=" return validate_fields_form_3() " method="post">
-            <h1>Login as an User</h1>
-            <label for="User_name">Name</label><span>*</span><br>
-            <input type="text" name="name" id="User_name" placeholder="Enter your name" required><br><br>
-            <label for="User_adress">Address</label><span>*</span><br>
-            <input type="text" name="address" id="User_adress" placeholder="Enter your address" required><br><br>
-            <label for="User_Gender">Gender</label><span>*</span><br>
-            <select name="gender" id="User_Gender">
-                <option value=""></option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-              </select><br><br>
-            <label for="User_contact">Contact Number</label><span>*</span><br>
-            <input type="tel" id="User_contact" placeholder="03XX-XXXXXXX" name="contact_number" required><br><br>
-            <label for="User_email">Email</label><span>*</span><br>
-            <input type="email" id="User_email" placeholder="Enter your email" required name="email"><br><br>
-            <label for="User_password">Password</label><span>*</span><br>
-            <input type="password" id="User_password" placeholder="Create pin or password" name="password" required><br><br>
-            <input type="submit">
-        </form>
-
     </div>
     <div class="btn_class">
-        <h3>Choose your Registeration</h3>
-        <a href="#" onclick="showForm('form1')" class="form_btn form1">Admin</a>
-        <a href="#" onclick="showForm('form2')" class="form_btn form2">Doctor</a>
-        <a href="#" onclick="showForm('form3')" class="form_btn form3">User</a>
+      <a href="#" onclick="showForm()" class="form_btn form1">Open Form</a>
     </div>
-
-    
-
-    
-    <script src="javascript.js"></script>
-           
+    <script src="javascript.js"></script>         
 </body>
 </html>

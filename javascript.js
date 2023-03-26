@@ -1,35 +1,40 @@
-function showForm(formId) 
-{
-  var form1 = document.getElementById("form1");
-  var form2 = document.getElementById("form2");
-  var form3 = document.getElementById("form3");
-          
-  if (formId === "form1") 
-  {
-     form1.style.display = "block";
-     form2.style.display = "none";
-     form3.style.display = "none";
-     } else if (formId === "form2") {
-     form1.style.display = "none";
-     form2.style.display = "block";
-     form3.style.display = "none";
-     } else if (formId === "form3") {
-     form1.style.display = "none";
-     form2.style.display = "none";
-     form3.style.display = "block";
-     }
+function showForm() {
+    let form = document.getElementById("form1");
+    form.style.display = "block";
 }
+
+function Show_Selected_Inputs()
+{
+    let doctor_fields=document.getElementById('doctor_fields');
+    let user_fields=document.getElementById('user_fields');
+    let selection=document.getElementById('Admin_selection');
+    if(selection.value=='User')
+    {
+        user_fields.style.display="block";
+        doctor_fields.style.display="none";
+    }
+    else if(selection.value=='Doctor')
+    {
+        doctor_fields.style.display="block";
+        user_fields.style.display="none";
+    }
+    
+}
+
 
 // validates the fields of Admin log in form
 
-function validate_fields_form_1()
+function validate_fields_form()
 {
     let name=document.getElementById("Admin_name");
     let address=document.getElementById("Admin_adress");
     let gender=document.getElementById("Admin_Gender");
     let contact=document.getElementById("Admin_contact");
+    let selection=document.getElementById("Admin_selection");
+    let specialization=document.getElementById("select_specialization");
     let email=document.getElementById("Admin_email");
     let password=document.getElementById("Admin_password");
+    let password_conform=document.getElementById("Admin_password_conform");
     let description=document.getElementById("Admin_description");
     const regex = /^[a-zA-Z\s]+$/;
     const phoneNumberPattern = /^03[0-9]{2}-[0-9]{7}$/;
@@ -38,7 +43,7 @@ function validate_fields_form_1()
         alert('Please enter name only letters!');
         return false;
     }
-    else if(gender.value == "")
+    else if(gender.value =="")
     {
         alert('Please enter the gender!');
         return false;
@@ -48,99 +53,29 @@ function validate_fields_form_1()
         alert('Please follow this pattern 03XX-XXXXXXX');
         return false;
     }
-    else if(password.value.length != 8)
+    else if(selection.value=="")
     {
-        alert('Your password lenght must be 8');
+        alert('Please select the category');
         return false;
     }
-    else 
+    else if(specialization.value=="")
     {
-        return true;
-    }
-}
-
-
-// validates the fields of Doctor log in form
-
-function validate_fields_form_2()
-{
-    console.log("here");
-    console.log(document.getElementById("Doctor_gender"));
-    let name=document.getElementById("Doctor_name");
-    let specilization=document.getElementById("Doctor_Specilization");
-    let address=document.getElementById("Doctor_adress");
-    let gender=document.getElementById("doctor_gender");
-    let contact=document.getElementById("Doctor_contact");
-    let email=document.getElementById("Doctor_email");
-    let password=document.getElementById("Doctor_password");
-    let description=document.getElementById("Doctor_description");
-    console.log(gender);
-    const regex = /^[a-zA-Z\s]+$/;
-    const phoneNumberPattern = /^03[0-9]{2}-[0-9]{7}$/;
-    if (!regex.test(name.value)) 
-    {
-        alert('Please enter name only letters!');
+        alert('Enter your Specialization');
         return false;
     }
-    else if(specilization.value == "")
+    else if(password.value.length > 8)
     {
-        alert('Please select your Specilization!');
+        alert('Your password length must be Eigth or less');
         return false;
     }
-    else if(gender.value == "")
+    else if(password_conform.value.length > 8)
     {
-        alert('Please select the gender!');
+        alert('Your conform password length must be Eigth or less');
         return false;
     }
-    else if(!phoneNumberPattern.test(contact.value))
+    else if(password.value != password_conform.value)
     {
-        alert('Please follow this pattern 03XX-XXXXXXX');
-        return false;
-    }
-    else if(password.value.length != 8)
-    {
-        alert('Your password lenght must be 8');
-        return false;
-    }
-    else 
-    {
-        return true;
-    }
-}
-
-
-// validate the form fields of form 3
-
-function validate_fields_form_3()
-{
-    let name=document.getElementById("User_name");
-    let address=document.getElementById("User_adress");
-    let gender=document.getElementById("User_Gender");
-    let contact=document.getElementById("User_contact");
-    let email=document.getElementById("User_email");
-    let password=document.getElementById("User_password");
-
-    const regex = /^[a-zA-Z\s]+$/;
-    const phoneNumberPattern = /^03[0-9]{2}-[0-9]{7}$/;
-    
-    if (!regex.test(name.value)) 
-    {
-        alert('Please enter name only letters!');
-        return false;
-    }
-    else if(gender.value == "")
-    {
-        alert('Please enter the gender!');
-        return false;
-    }
-    else if(!phoneNumberPattern.test(contact.value))
-    {
-        alert('Please follow this pattern 03XX-XXXXXXX');
-        return false;
-    }
-    else if(password.value.length != 8)
-    {
-        alert('Your password lenght must be 8');
+        alert('Password does not match');
         return false;
     }
     else 

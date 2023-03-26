@@ -1,0 +1,118 @@
+*{
+    margin:0;
+    padding: 0;;
+}
+body
+{
+    background-image: url('pic/login_page_pic_bq.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.side_bar
+{
+    background-color: rgb(0, 0, 0,0.3);
+    width: 20vw;
+    height: 100vh;
+}
+.dashboard_name h2, .pannel-hide h2, .nav_bar h2{
+    color: white;
+    text-align: center;
+}
+.nav_bar h2{
+    margin-top: 1vh;
+}
+.dashboard_name
+{
+    border-bottom: 2px solid white;
+    padding: 10px;
+    width: 10vw;
+    margin-left: 4vw;
+}
+.admin-pannel-name
+{
+    border-bottom: 2px solid white;
+    width: 10vw;
+    margin-left: 33vw;
+    padding: 5px;
+}
+.dashboard_side_bar, .doctor_side_bar, .patienr_side_bar, .appointment_side_bar, .profile_side_bar
+{
+    padding: 23px;
+    margin-left: 3vw;
+}
+.dashboard_side_bar a, .doctor_side_bar a, .patienr_side_bar a, .appointment_side_bar a, .profile_side_bar a{
+    text-decoration: none;
+    font-size: 22px;
+    color: white;
+    margin-left: 1vw;
+}
+.dashboard_side_bar a:hover, .doctor_side_bar a:hover, .patienr_side_bar a:hover, .appointment_side_bar a:hover, .profile_side_bar a:hover{
+    color: blue;
+}
+i{
+    color: blue;
+}
+.first_container
+{
+    display: flex;
+}
+
+.nav_bar{
+    background-color: rgb(0, 0, 0,0.7);
+    height: 8vh; 
+    width: 80vw; 
+}
+.nav_bar h2{
+    color: white;
+}
+.pannels
+{
+    box-shadow: 1px 1px 19px 2px blue;
+    margin-top: 11vh;
+    margin-left: 2vw;
+    height: 73vh;
+    width: 75vw;
+    background-color: rgb(0, 0, 0,0.3);
+}
+.pannel-hide
+{
+    display: none;
+}
+.admin-penel-content
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 15vh;
+    
+}
+.admin-penel-content div
+{
+    border-left: 7px solid blue;
+    border-radius: 8px 0 0 8px;
+    margin: 10px;
+    height: 24vh;
+    width: 12vw;
+    background-color: white;
+}
+.admin-penel-content div label
+{
+    font-size: 20px;
+}
+.admin-page-icon
+{
+    font-size: 36px;
+    margin-left: 5vw;
+    margin-top: 8vh;
+}
+.doctor-icon
+{
+    margin-top: 11vh;
+}
+.patient-icon
+{
+    margin-top: 7vh;
+}
+.admin-penel-content div span label
+{
+    margin-left: 2vw;
+}
