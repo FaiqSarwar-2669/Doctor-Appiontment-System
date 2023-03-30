@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/c18972abce.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style-sheet-2.css">
+    <link rel="stylesheet" href="../css/style-sheet-2.css">
     <title>Admin Dashbord</title>
 </head>
 <body>
@@ -37,6 +37,9 @@
         </div>
         <div class="nav_bar">
             <h2>Online Doctor Appointment System</h2>
+            <div class="logout_bar">
+                <a href="../index.php">Log Out</a>
+            </div>
             <div class="pannels">
                 <div class="dashbord-pannel pannel-hide" id="admin-pannel-for-dashbord">
                     <div class="admin-pannel-name">
@@ -107,6 +110,6 @@
     </div>
 
 
-    <script src="javascript2.js"></script>
+    <script src="../javascript/javascript2.js"></script>
 </body>
 </html>

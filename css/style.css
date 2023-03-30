@@ -6,7 +6,7 @@
 /* css for login page  */
 
 body {
-    background-image: url('pic/login_page_pic_bq.jpg');
+    background-image: url('../pic/login_page_pic_bq.jpg');
     background-size: cover;
     background-attachment: fixed;
 }
@@ -75,7 +75,7 @@ body {
     font-size: 16px;
     width: 88%;
 }
-.login_form input[type="submit"]
+.login_form input[type='submit']
 {
     border: none;
     outline: none;
@@ -91,7 +91,7 @@ body {
     margin-left: 15px;
     
 }
-.login_form input[type="submit"]:hover
+.login_form input[type='submit']:hover
 {
     background-color:blue;
     box-shadow: 0px 0px 2px 2px rgb(0,0,0);

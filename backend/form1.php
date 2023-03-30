@@ -56,7 +56,7 @@ else if($password!=$conform_password)
 }
 if (!empty($error)) 
 {
-    header("Location: registration_page.php?error=$error");
+    header("Location: ../frontend/registration_page.php?error=$error");
     exit;
 }
 
@@ -68,7 +68,7 @@ if($num>0)
     $error="This number is already exist try to another one";
     if (!empty($error)) 
     {
-        header("Location: registration_page.php?error=$error");
+        header("Location: ../frontend/registration_page.php?error=$error");
         exit;
     }
 }
@@ -86,7 +86,7 @@ else
         }
         else
         {
-            header('Location: registration_page.php');
+            header('Location: ../frontend/registration_page.php');
             exit;
         }
     }
@@ -107,7 +107,7 @@ else
 
         if (!empty($error)) 
         {
-            header("Location: registration_page.php?error=$error");
+            header("Location: ../frontend/registration_page.php?error=$error");
             exit;
         }
 
@@ -124,18 +124,18 @@ else
             mysqli_query($connection,$qurey1);
             if($qurey1)
             {
-                header('Location: index.php');
+                header('Location: ../index.php');
                 exit;
             }
             else
             {
-                header('Location: registration_page.php');
+                header('Location: ../frontend/registration_page.php');
                 exit;
             }
         }
         if (!empty($error)) 
         {
-            header("Location: registration_page.php?error=$error");
+            header("Location: ../frontend/registration_page.php?error=$error");
             exit;
         }
     }
@@ -143,9 +143,11 @@ else
 
 if (!empty($error)) 
 {
-    header("Location: index.php?error=$error");
+    header("Location: ../index.php?error=$error");
     exit;
 }
+
+
 
 die();
 

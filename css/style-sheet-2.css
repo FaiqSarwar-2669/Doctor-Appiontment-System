@@ -4,7 +4,7 @@
 }
 body
 {
-    background-image: url('pic/login_page_pic_bq.jpg');
+    background-image: url('../pic/login_page_pic_bq.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -64,6 +64,18 @@ i{
 }
 .nav_bar h2{
     color: white;
+}
+.logout_bar a
+{
+    color: white;
+    position: relative;
+    float: inline-end;
+    text-decoration: none;
+    margin-top: -3vh
+}
+.logout_bar a:hover
+{
+    color: blue;
 }
 .pannels
 {
