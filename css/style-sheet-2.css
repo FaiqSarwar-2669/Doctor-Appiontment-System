@@ -110,21 +110,147 @@ i{
 {
     font-size: 20px;
 }
-.admin-page-icon
-{
-    font-size: 36px;
-    margin-left: 5vw;
-    margin-top: 8vh;
-}
-.doctor-icon
-{
-    margin-top: 11vh;
-}
-.patient-icon
-{
-    margin-top: 7vh;
-}
 .admin-penel-content div span label
 {
-    margin-left: 2vw;
+    margin-left: 1vw;
+    font-size: 30px;
+    color:blue;
+}
+.admin-boxes
+{
+    position: relative;
+    top:8vh;
+}
+.admin-page-icon
+{
+    font-size: 25px;
+    position: relative;
+    float: right;
+    top: 50px;
+    right: 10px;
+}
+table 
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+th, td 
+{
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even)
+ {
+   background-color: #f2f2f2
+}
+.Doctor
+{
+    margin-top: 4vh;
+    margin-left: 3.5vw;
+    width: 90%;
+    overflow-y: scroll;
+}
+tr a{
+    background-color:rgb(142, 142, 233);
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 15px;
+    text-decoration: none;
+}
+tr a:hover
+{
+    background-color:blue;
+}
+.two-panel
+{
+    display: flex;
+    justify-content: center;
+}
+.part-2{
+    margin-left: 10%;
+}
+.Doctor-profile-pannel
+{
+    margin-top: 50px;
+}
+.User-profile-pannel
+{
+    margin-top: 2vh;
+    margin-left: 25vw;
+}
+.User-profile-pannel input[type="text"],
+.Doctor-profile-pannel input[type="text"]
+{
+    height: 30px;
+    width: 20vw;
+    margin-left: 80px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    color:white;
+}
+.User-profile-pannel label,.User-Appointment-pannel label,
+.Doctor-profile-pannel label
+{
+    color: white;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+#select_specialization,
+#selected-doctor,
+#time-slot
+{
+    height: 30px;
+    width: 70%;
+    margin-left: 70px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    color:black;
+}
+.User-Appointment-pannel
+{
+    margin-left: 10vw;
+}
+.load-doctor
+{
+    width: 30%;
+    height: 35px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    margin-left: 27%;
+    background-color: rgb(120, 120, 207);
+    font-size: 20px;
+    color: #fff;
+}
+.save-form
+{
+    width: 30%;
+    height: 45px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    margin-left: 30%;
+    background-color: rgb(120, 120, 207);
+    font-size: 20px;
+    color: #fff;
+    padding: 7px;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+.save-form:hover
+{
+    background-color: blue;
 }

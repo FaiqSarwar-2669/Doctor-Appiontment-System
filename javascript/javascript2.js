@@ -8,7 +8,6 @@ function GoToPannel(pannel)
 
     if(pannel=='dashboard')
     {
-        console.log("1");
         dashboard_pannel.style.display="block";
         doctor_pannel.style.display="none";
         patient_pannel.style.display="none";
@@ -17,7 +16,6 @@ function GoToPannel(pannel)
     }
     else if(pannel=='doctor')
     {
-        console.log("2");
         dashboard_pannel.style.display="none";
         doctor_pannel.style.display="block";
         patient_pannel.style.display="none";
@@ -26,7 +24,6 @@ function GoToPannel(pannel)
     }
     else if(pannel=='patient')
     {
-        console.log("3");
         dashboard_pannel.style.display="none";
         doctor_pannel.style.display="none";
         patient_pannel.style.display="block";
@@ -35,7 +32,6 @@ function GoToPannel(pannel)
     }
     else if(pannel=='appointment')
     {
-        console.log("4");
         dashboard_pannel.style.display="none";
         doctor_pannel.style.display="none";
         patient_pannel.style.display="none";
@@ -44,7 +40,6 @@ function GoToPannel(pannel)
     }
     else if(pannel=='profile')
     {
-        console.log("5");
         dashboard_pannel.style.display="none";
         doctor_pannel.style.display="none";
         patient_pannel.style.display="none";

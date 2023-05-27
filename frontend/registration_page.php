@@ -21,9 +21,9 @@
               ?>
             </p>
             <label for="Admin_name">Name</label><span>*</span><br>
-            <input type="text" id="Admin_name" placeholder="Enter your name" name="name" required value="f"><br><br>
+            <input type="text" id="Admin_name" placeholder="Enter your name" name="name" required><br><br>
             <label for="Admin_adress">Address</label><span>*</span><br>
-            <input type="text" id="Admin_adress" placeholder="Enter your address" name="address" required value="f"><br><br>
+            <input type="text" id="Admin_adress" placeholder="Enter your address" name="address" required><br><br>
             <label for="Admin_Gender">Gender</label><span>*</span><br>
             <select name="gender" id="Admin_Gender">
               <option value="f"></option>
@@ -31,7 +31,7 @@
               <option value="Female">Female</option>
             </select><br><br>
             <label for="Admin_contact">Contact Number</label><span>*</span><br>
-            <input type="tel" id="Admin_contact" placeholder="03XX-XXXXXXX" name="contact_number" required value="0347-2669712"><br><br>
+            <input type="tel" id="Admin_contact" placeholder="03XX-XXXXXXX" name="contact_number" required><br><br>
             <label for="Admin_contact">Select Category</label><span>*</span><br>
             <select name="selection" id="Admin_selection" onchange="Show_Selected_Inputs()">
               <option value=""></option>
@@ -57,11 +57,11 @@
               <br><br>
               </div>
               <label for="Admin_email">Email</label><span>*</span><br>
-              <input type="email" id="Admin_email" placeholder="Enter your email" name="email" required value="john.doe@example.com"><br><br>
+              <input type="email" id="Admin_email" placeholder="Enter your email" name="email" required><br><br>
               <label for="Admin_password">Password</label><span>*</span><br>
-              <input type="password" id="Admin_password" placeholder="Create pin or password" name="password" required value="7861234"><br><br>
+              <input type="password" id="Admin_password" placeholder="Create pin or password" name="password" required ><br><br>
               <label for="Admin_password_conform">Conform Password</label><span>*</span><br>
-              <input type="password" id="Admin_password_conform" placeholder="Re-type pin or password" name="conform_password" required value="7861234"><br><br>
+              <input type="password" id="Admin_password_conform" placeholder="Re-type pin or password" name="conform_password" required ><br><br>
             <div class="user_fields" id="user_fields">
             </div>
             <input type="submit" value="Submit">

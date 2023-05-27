@@ -6,6 +6,10 @@ $password="";
 $dbname="Doctor_Appiontment_System";
 
 $connection=mysqli_connect($servername,$username,$password,$dbname);
+if ($connection->connect_error) 
+{
+    die("Connection failed: " . $conn->connect_error);
+}
 
 $error="";
 $name=$_POST['name'];
@@ -76,12 +80,26 @@ else
 {
     if($role=='User')
     {
-        $qurey="INSERT INTO `registeration` (`User_name`, `User_address`, `User_gender`, `User_contact`, `User_catagory`, `User_password`, `Conform_password`) VALUES 
-        ('$name', '$address', '$gender', '$contact', '$role', '$password', '$conform_password')";
+        if(empty($email))
+        {
+            $error='enter the email!';
+        }
+        else if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+        {
+            $error='enter the valid email!';
+        }
+
+        if (!empty($error)) 
+        {
+            header("Location: ../frontend/registration_page.php?error=$error");
+            exit;
+        }
+        $qurey="INSERT INTO `registeration` (`User_name`, `User_address`, `User_gender`, `User_contact`, `User_catagory`,`Doctor_email`, `User_password`, `Conform_password`) VALUES 
+        ('$name', '$address', '$gender', '$contact', '$role', '$email', '$password', '$conform_password')";
         mysqli_query($connection,$qurey);
         if($qurey)
         {
-            header('Location: index.php');
+            header('Location: ../index.php');
             exit;
         }
         else
@@ -146,10 +164,6 @@ if (!empty($error))
     header("Location: ../index.php?error=$error");
     exit;
 }
-
-
-
-die();
 
 
 ?>
