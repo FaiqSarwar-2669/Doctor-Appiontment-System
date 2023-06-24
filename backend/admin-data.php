@@ -16,7 +16,7 @@ include('../database/database.php');
     $currentDate = date('Y-m-d');
     $sql9="SELECT * FROM `appointments` WHERE Date=$currentDate";
     $today_appointment=mysqli_query($connection,$sql9);
-    $appointment=mysqli_num_rows($total_appointment);
+    $appointment=mysqli_num_rows($today_appointment);
 
     if(isset($_GET['delete']) && $_GET['delete']=='doctor')
     {

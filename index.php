@@ -1,8 +1,5 @@
 <?php 
-
 include 'includes/function.php';
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +41,7 @@ include 'includes/function.php';
             <input type="password" id="user_password" class="get_user_password_field" placeholder="Enter password" name="user_password"><br>
             <input type="submit" value="Log In"><br>
         </form>
-        <a href="#">Forget Password</a><br>
+        <a href="./frontend/forget.php">Forget Password</a><br>
     </div>
 </body>
 </html>

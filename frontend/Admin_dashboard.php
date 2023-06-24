@@ -20,7 +20,7 @@ include('../backend/admin-data.php');
             </div>
             <div class="dashboard_side_bar">
                 <span><i class="fa-solid fa-gauge"></i>
-                <a href="#" onclick="GoToPannel('dashboard')">Dashbord</a></span>
+                <a href="#" onclick="GoToPannel('dashboard')" id="admin-reload">Dashbord</a></span>
             </div>
             <div class="doctor_side_bar">
                 <span><i class="fa-solid fa-user-doctor"></i>

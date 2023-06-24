@@ -5,28 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Registeration</title>
 </head>
 <body>
-    <div class="forms_area">
-        <form id="form1" onsubmit=" return validate_fields_form() " method="POST" action="../backend/form1.php">
+    <div class="forms_area" id="form1">
             <h1>Sign Up Form</h1>
-            <p class="error">
-              <?php
-                if(isset($_GET['error']))
-                {
-                  echo "<style>#form1{display: block;}</style>";
-                  echo $_GET['error'];
-                }
-              ?>
-            </p>
             <label for="Admin_name">Name</label><span>*</span><br>
             <input type="text" id="Admin_name" placeholder="Enter your name" name="name" required><br><br>
             <label for="Admin_adress">Address</label><span>*</span><br>
             <input type="text" id="Admin_adress" placeholder="Enter your address" name="address" required><br><br>
             <label for="Admin_Gender">Gender</label><span>*</span><br>
             <select name="gender" id="Admin_Gender">
-              <option value="f"></option>
+              <option value=""></option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select><br><br>
@@ -64,12 +55,12 @@
               <input type="password" id="Admin_password_conform" placeholder="Re-type pin or password" name="conform_password" required ><br><br>
             <div class="user_fields" id="user_fields">
             </div>
-            <input type="submit" value="Submit">
-        </form>
+            <button id="register-self">Submit</button>
     </div>
     <div class="btn_class">
       <a href="#" onclick="showForm()" class="form_btn form1">Open Form</a>
     </div>
-    <script src="../javascript/javascript.js"></script>         
+    <script src="../javascript/javascript.js"></script>
+    <script src="../javascript/jquery.js"></script>         
 </body>
 </html>

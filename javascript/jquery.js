@@ -3,6 +3,9 @@ $(document).ready(function(){
     $("#admin-doctor").click(function(){
         loadDoctor();
     });
+    $("#admin-reload").click(function(){
+        location.reload();
+    });
     $("#admin-patient").click(function(){
         loadPatient();
     });
@@ -235,6 +238,69 @@ $(document).ready(function(){
             }
         });
     });
+    $('#register-self').click(function(){
+        let name = $('#Admin_name').val();
+        let address = $('#Admin_adress').val();
+        let gender = $('#Admin_Gender').val();
+        let contact = $('#Admin_contact').val();
+        let role = $('#Admin_selection').val();
+        let specialization = $('#select_specialization').val(); // Updated line
+        let email = $('#Admin_email').val();
+        let password = $('#Admin_password').val();
+        let conform_password = $('#Admin_password_conform').val();
+    
+        $.ajax({
+            url: '../backend/form1.php',
+            type: 'POST',
+            data: {
+                name: name,
+                address: address,
+                gender: gender,
+                contact_number: contact,
+                selection: role,
+                specialization: specialization,
+                email: email,
+                password: password,
+                conform_password: conform_password
+            },
+            success: function(response) {
+                if(response === 'Successfully Added!!')
+                {
+                    alert(response);
+                    window.location.href = '../index.php';
+                }
+                else{
+                    alert(response);
+                }
+                
+            }
+        });
+    });
+    $('#update-password').click(function(){
+        let name = $('#update_user_name').val();
+        let conform_password = $('#update_user_password').val();
+    
+        $.ajax({
+            url: '../backend/UpdatePassword.php',
+            type: 'POST',
+            data: {
+                name: name,
+                conform_password: conform_password
+            },
+            success: function(response) {
+                if(response === '1')
+                {
+                    alert("Password Updated Successfully !!");
+                    window.location.href = '../index.php';
+                }
+                else{
+                    alert(response);
+                }
+                
+            }
+        });
+    });
+    
     function loadDoctor()
     {
         $.ajax({

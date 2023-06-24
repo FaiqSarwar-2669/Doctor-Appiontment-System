@@ -64,7 +64,18 @@ body {
     margin-bottom: 20px;
     margin-left: 15px;
 }
-.login_form input[type="text"], input[type="password"]
+#update_user_password{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    width: 88%;
+    margin-left: 14px;
+}
+.login_form input[type="text"]
 {
     border: none;
     border-bottom: 1px solid #fff;
@@ -75,7 +86,8 @@ body {
     font-size: 16px;
     width: 88%;
 }
-.login_form input[type='submit']
+#update-password,
+.login_form input[type="submit"]
 {
     border: none;
     outline: none;
@@ -91,7 +103,8 @@ body {
     margin-left: 15px;
     
 }
-.login_form input[type='submit']:hover
+#update-password:hover,
+.login_form input[type="submit"]:hover
 {
     background-color:blue;
     box-shadow: 0px 0px 2px 2px rgb(0,0,0);
@@ -205,7 +218,7 @@ body {
     outline: none;
     color:white;
 }
-#form1 input[type="submit"]
+#register-self
 {
     width: 30%;
     height: 30px;
@@ -218,7 +231,7 @@ body {
     font-size: 20px;
     color: #fff;
 }
-#form1 input[type="submit"]:hover
+#register-self:hover
 {
     background-color:blue;
     box-shadow: 0px 0px 2px 2px rgb(0,0,0);
